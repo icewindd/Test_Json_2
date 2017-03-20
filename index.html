@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cssReset.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>桃園YouBike 查詢</h1>
+            <p>鼓勵更多民眾樂意使用大眾運輸系統，同時達到環保與節能的目的，打造全新的桃園通勤文化。</p>
+            <a href="http://tycg.youbike.com.tw/cht/index.php">桃園Ubike官方網站</a>
+            <ul>
+                <li><label for="area">區域 :</label>
+                </li>
+                <li><select id="area" name="area">
+					<option value="all">全區</option>
+					<option value="桃園區">桃園區</option>
+					<option value="中壢區">中壢區</option>
+					<option value="平鎮區">平鎮區</option>
+					<option value="龜山區">龜山區</option>
+					<option value="蘆竹區">蘆竹區</option>
+					<option value="八德區">八德區</option>
+					<option value="大溪區">大溪區</option>
+					<option value="大園區">大園區</option>
+				</select></li>
+                <li><button class="btn" type="button"><i class="fa fa-search" aria-hidden="true"></i></button></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="map"></div>
+        </div>
+    </div>
+    <script>
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 24.993040,
+                    lng: 121.310863
+                },
+                scrollwheel: false,
+                zoom: 12
+            });
+        }
+    </script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/all.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDc_zEFfItWsSHo2dXVsHIIf7sES7m1-O8&callback=initMap&language=zh-TW">
+    </script>
+</body>
+
+</html>
